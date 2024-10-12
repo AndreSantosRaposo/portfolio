@@ -1,0 +1,25 @@
+// Import Bootstrap's functions and variables
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/maps";
+
+// Override the primary color
+$custom-theme-colors: (
+  "primary": #0A21C0,  //#02a9f7
+  "secondary":  #ff6600,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+
+// Import the rest of Bootstrap
+@import "./node_modules/bootstrap/scss/bootstrap";  
+
